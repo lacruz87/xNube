@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ln:</strong>
+  <%= @inventario.ln %>
+</p>
+
+<p>
+  <strong>Part:</strong>
+  <%= @inventario.part %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @inventario.site %>
+</p>
+
+<p>
+  <strong>Site desc:</strong>
+  <%= @inventario.site_desc %>
+</p>
+
+<p>
+  <strong>Loc:</strong>
+  <%= @inventario.loc %>
+</p>
+
+<p>
+  <strong>Lot:</strong>
+  <%= @inventario.lot %>
+</p>
+
+<p>
+  <strong>Ref:</strong>
+  <%= @inventario.ref %>
+</p>
+
+<p>
+  <strong>Loc des:</strong>
+  <%= @inventario.loc_des %>
+</p>
+
+<p>
+  <strong>Create:</strong>
+  <%= @inventario.create %>
+</p>
+
+<p>
+  <strong>Expire:</strong>
+  <%= @inventario.expire %>
+</p>
+
+<p>
+  <strong>Qty oh:</strong>
+  <%= @inventario.qty_oh %>
+</p>
+
+<p>
+  <strong>Qty all:</strong>
+  <%= @inventario.qty_all %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @inventario.status %>
+</p>
+
+<%= link_to 'Edit', edit_inventario_path(@inventario) %> |
+<%= link_to 'Back', inventarios_path %>

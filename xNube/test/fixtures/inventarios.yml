@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ln: MyString
+  part: MyString
+  site: MyString
+  site_desc: MyString
+  loc: MyString
+  lot: MyString
+  ref: MyString
+  loc_des: MyString
+  create: MyString
+  expire: MyString
+  qty_oh: MyString
+  qty_all: MyString
+  status: MyString
+
+two:
+  ln: MyString
+  part: MyString
+  site: MyString
+  site_desc: MyString
+  loc: MyString
+  lot: MyString
+  ref: MyString
+  loc_des: MyString
+  create: MyString
+  expire: MyString
+  qty_oh: MyString
+  qty_all: MyString
+  status: MyString

@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Inventarios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ln</th>
+      <th>Part</th>
+      <th>Site</th>
+      <th>Site desc</th>
+      <th>Loc</th>
+      <th>Lot</th>
+      <th>Ref</th>
+      <th>Loc des</th>
+      <th>Create</th>
+      <th>Expire</th>
+      <th>Qty oh</th>
+      <th>Qty all</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inventarios.each do |inventario| %>
+      <tr>
+        <td><%= inventario.ln %></td>
+        <td><%= inventario.part %></td>
+        <td><%= inventario.site %></td>
+        <td><%= inventario.site_desc %></td>
+        <td><%= inventario.loc %></td>
+        <td><%= inventario.lot %></td>
+        <td><%= inventario.ref %></td>
+        <td><%= inventario.loc_des %></td>
+        <td><%= inventario.create %></td>
+        <td><%= inventario.expire %></td>
+        <td><%= inventario.qty_oh %></td>
+        <td><%= inventario.qty_all %></td>
+        <td><%= inventario.status %></td>
+        <td><%= link_to 'Show', inventario %></td>
+        <td><%= link_to 'Edit', edit_inventario_path(inventario) %></td>
+        <td><%= link_to 'Destroy', inventario, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Inventario', new_inventario_path %>

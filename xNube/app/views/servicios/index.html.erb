@@ -1,3 +1,25 @@
-<h1>Servicios#index</h1>
-<p>Find me in app/views/servicios/index.html.erb</p>
-Prueba
+
+
+# rails generate scaffold inventario ln part site site_desc loc lot ref loc_des create expire qty_oh qty_all status
+<br/>
+<%= link_to 'Index Inventario', inventarios_path %>
+<br/>
+<%= link_to 'Descargar Inventario', servicios_descargar_stocks_path %>
+<br/>
+<%= link_to 'Ver xml', servicios_view_xml_path %>
+<br/>
+
+<line ln="1">
+<part>100103</part>
+<site>100</site>
+<site_desc>PLANTA CHILLAN</site_desc>
+<loc>dd0101</loc>
+<lot>160917 p 47 filtra</lot>
+<ref/>
+<loc_des>DETERIORADOS Y OBSOLETOS</loc_des>
+<create>20/09/17</create>
+<expire>15/03/18</expire>
+<qty_oh>        1.000000</qty_oh>
+<qty_all>        0.000000</qty_all>
+<status>N-N-N</status>
+</line>

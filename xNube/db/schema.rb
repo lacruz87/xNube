@@ -10,9 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20171227152312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "inventarios", force: :cascade do |t|
+    t.string "ln"
+    t.string "part"
+    t.string "site"
+    t.string "site_desc"
+    t.string "loc"
+    t.string "lot"
+    t.string "ref"
+    t.string "loc_des"
+    t.string "create"
+    t.string "expire"
+    t.string "qty_oh"
+    t.string "qty_all"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

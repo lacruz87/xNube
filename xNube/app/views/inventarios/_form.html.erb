@@ -1,0 +1,82 @@
+<%= form_with(model: inventario, local: true) do |form| %>
+  <% if inventario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(inventario.errors.count, "error") %> prohibited this inventario from being saved:</h2>
+
+      <ul>
+      <% inventario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ln %>
+    <%= form.text_field :ln, id: :inventario_ln %>
+  </div>
+
+  <div class="field">
+    <%= form.label :part %>
+    <%= form.text_field :part, id: :inventario_part %>
+  </div>
+
+  <div class="field">
+    <%= form.label :site %>
+    <%= form.text_field :site, id: :inventario_site %>
+  </div>
+
+  <div class="field">
+    <%= form.label :site_desc %>
+    <%= form.text_field :site_desc, id: :inventario_site_desc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :loc %>
+    <%= form.text_field :loc, id: :inventario_loc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lot %>
+    <%= form.text_field :lot, id: :inventario_lot %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ref %>
+    <%= form.text_field :ref, id: :inventario_ref %>
+  </div>
+
+  <div class="field">
+    <%= form.label :loc_des %>
+    <%= form.text_field :loc_des, id: :inventario_loc_des %>
+  </div>
+
+  <div class="field">
+    <%= form.label :create %>
+    <%= form.text_field :create, id: :inventario_create %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expire %>
+    <%= form.text_field :expire, id: :inventario_expire %>
+  </div>
+
+  <div class="field">
+    <%= form.label :qty_oh %>
+    <%= form.text_field :qty_oh, id: :inventario_qty_oh %>
+  </div>
+
+  <div class="field">
+    <%= form.label :qty_all %>
+    <%= form.text_field :qty_all, id: :inventario_qty_all %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :inventario_status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
