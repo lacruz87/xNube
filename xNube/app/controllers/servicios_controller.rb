@@ -1,6 +1,10 @@
 class ServiciosController < ApplicationController
-   require 'nokogiri'
+  require 'nokogiri'
   require 'open-uri'
+
+  def index
+  	@fecha=Inventario.first.created_at
+  end
 
   def descargar_stocks
   	Inventario.delete_all
@@ -24,14 +28,17 @@ class ServiciosController < ApplicationController
 		i=i+1
 	end
 
+	@out_put='{"status":"ok"}'  
+    render :json=>@out_put  
 
-  end
-  def index1
 
   end
 
   def view_xml
-  	inv=Inventario.where("cast(part as INTEGER)>?",900000)
+  	#inv=Inventario.where("cast(part as INTEGER)>?",900000)
+  	excep_part=Excep.all
+  	#inv_part=Inventario.select(:part)
+  	inv=Inventario.where('part NOT IN (?)',excep_part.map(&:part))
 
 	builder = Nokogiri::XML::Builder.new do |xml|
 	  xml.xml {
@@ -58,5 +65,31 @@ class ServiciosController < ApplicationController
 	end
 	render xml:builder.to_xml
   end
+
+  def borrar_bd_excep
+  	#Fletero2.delete_all
+  	@out_put='{"status":"ok"}'  
+    render :json=>@out_put  
+  end
+
+  def agregar_excep
+
+    #@fletero2 = Fletero2.new(fletero2_params)
+#
+ #     if @fletero2.save
+  #        @out_put="["+@fletero2.to_json+"]"          
+   #       render :json=>@out_put
+    #  else
+	#	    render :json=>@fletero2.errors
+     # end
+  end
+
+
+  private
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def excep_params
+      params.permit(:fletero, :Estado, :anden)
+    end
+
 
 end

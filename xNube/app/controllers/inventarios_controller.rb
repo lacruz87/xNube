@@ -4,7 +4,7 @@ class InventariosController < ApplicationController
   # GET /inventarios
   # GET /inventarios.json
   def index
-    @inventarios = Inventario.first(2)
+    @inventarios = Inventario.all#.first(2)
   end
 
   # GET /inventarios/1

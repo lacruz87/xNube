@@ -1,0 +1,2 @@
+class Excep < ApplicationRecord
+end

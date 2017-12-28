@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :exceps
   resources :inventarios
   get 'servicios/index'
   get 'servicios/descargar_stocks' 

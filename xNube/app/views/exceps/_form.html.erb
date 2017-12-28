@@ -1,0 +1,22 @@
+<%= form_with(model: excep, local: true) do |form| %>
+  <% if excep.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(excep.errors.count, "error") %> prohibited this excep from being saved:</h2>
+
+      <ul>
+      <% excep.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :part %>
+    <%= form.text_field :part, id: :excep_part %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
