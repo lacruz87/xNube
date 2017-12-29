@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get 'servicios/descargar_stocks' 
   get 'servicios/view_xml' 
 
+  get 'servicios/borrar_bd_excep'
+  get 'servicios/agregar_excep'
+  #get 'servicios/view_xml'
+
   
   root 'servicios#index'
 

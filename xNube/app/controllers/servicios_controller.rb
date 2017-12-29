@@ -28,7 +28,9 @@ class ServiciosController < ApplicationController
 		i=i+1
 	end
 
-	@out_put='{"status":"ok"}'  
+	fecha=Inventario.first.created_at
+
+	@out_put='{"updated":"'+fecha.strftime("%Y-%m-%d %H:%M:%S")+'"}'  
     render :json=>@out_put  
 
 
@@ -67,28 +69,28 @@ class ServiciosController < ApplicationController
   end
 
   def borrar_bd_excep
-  	#Fletero2.delete_all
+  	Excep.delete_all
   	@out_put='{"status":"ok"}'  
     render :json=>@out_put  
   end
 
   def agregar_excep
 
-    #@fletero2 = Fletero2.new(fletero2_params)
-#
- #     if @fletero2.save
-  #        @out_put="["+@fletero2.to_json+"]"          
-   #       render :json=>@out_put
-    #  else
-	#	    render :json=>@fletero2.errors
-     # end
+    @excep2 = Excep.new(excep_params)
+
+      if @excep2.save
+          @out_put="["+@excep2.to_json+"]"          
+          render :json=>@out_put
+      else
+		    render :json=>@excep2.errors
+      end
   end
 
 
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def excep_params
-      params.permit(:fletero, :Estado, :anden)
+      params.permit(:part)
     end
 
 
