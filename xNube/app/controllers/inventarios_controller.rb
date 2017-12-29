@@ -4,7 +4,8 @@ class InventariosController < ApplicationController
   # GET /inventarios
   # GET /inventarios.json
   def index
-    @inventarios = Inventario.all#.first(2)
+    #@inventarios = Inventario.all#.first(2)
+    @inventarios = Inventario.paginate(:page => params[:page])
   end
 
   # GET /inventarios/1

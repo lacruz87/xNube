@@ -4,7 +4,8 @@ class ExcepsController < ApplicationController
   # GET /exceps
   # GET /exceps.json
   def index
-    @exceps = Excep.all
+    #@exceps = Excep.all
+    @exceps = Excep.paginate(:page => params[:page])
   end
 
   # GET /exceps/1
